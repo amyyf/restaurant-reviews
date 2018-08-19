@@ -18,6 +18,20 @@
   },
   "homepage": "https://github.com/amyyf/restaurant-reviews#readme",
   "semistandard": {
-    "globals": ["DBHelper", "self", "L"]
+    "globals": [
+      "DBHelper",
+      "self",
+      "L"
+    ]
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1"
+  },
+  "scripts": {
+    "server": "gulp server",
+    "build": "gulp build",
+    "prod": "gulp build:prod",
+    "default": "gulp default"
   }
 }
