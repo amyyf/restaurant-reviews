@@ -61,4 +61,4 @@ function watch () {
 // exporting allows access through Gulp-CLI, accessed through package.json since it's locally installed
 exports.dev = gulp.series(serveDev, watch); // live serve for development
 exports.build = gulp.series(resetDist, gulp.parallel(minifyCss, buildJs, moveStatics)); // build to dist file
-exports.testProd = gulp.series(exports.build, serveProd); // test production site
+exports.serveProd = gulp.series(exports.build, serveProd); // test production site
