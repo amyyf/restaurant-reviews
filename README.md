@@ -48,3 +48,5 @@ To build the production site AND start a server for it, run `npm run serve-prod`
 ### Dependencies
 
 This project uses Gulp 4.0 as a build tool and several plugins to transpile and minify the code for production. It does **not** use Gulp-CLI globally, so Gulp commands must be run through `npx` (npm >= 5.2.0) unless Gulp is installed globally on your machine.
+
+I used [WebAIM's recommended styling](https://webaim.org/techniques/css/invisiblecontent/) to visually hide content that will be read by screen readers.
