@@ -60,7 +60,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #d0cdcd;
-  /* font-size: 8pt; */
+  font-size: 0.75em;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
@@ -185,6 +185,9 @@ nav h1 a {
   padding: 1.5em;
   text-align: left;
   max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -195,9 +198,8 @@ nav h1 a {
 #restaurants-list li h3 {
   color: #d61c10;
   font-family: Arial,sans-serif;
-  /* font-size: 14pt; */
   font-weight: 200;
-  letter-spacing: 0;
+  letter-spacing: 0.1em;
   line-height: 1.3;
   margin: 20px 0 10px;
   text-transform: uppercase;
@@ -207,16 +209,20 @@ nav h1 a {
   /* font-size: 11pt; */
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #f9b761;
   border-bottom: 3px solid #eee;
   color: #000;
   display: inline-block;
-  /* font-size: 10pt; */
-  margin: 15px 0 0;
-  padding: 8px 30px 10px;
-  text-align: center;
-  text-decoration: none;
+  font-size: 0.9em;
+  margin: 1em 0 0;
+  padding: 0.5em 2em 0.75em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+.neighborhood {
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /* ====================== Restaurant Details ====================== */
