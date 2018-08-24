@@ -119,7 +119,7 @@ const resetRestaurants = (restaurants) => {
   // Remove all restaurants
   self.restaurants = [];
   const ul = document.getElementById('restaurants-list');
-  ul.innerHTML = '';
+  ul.innerHTML = '<lh>Restaurants</lh>';
 
   // Remove all map markers
   if (self.markers) {
