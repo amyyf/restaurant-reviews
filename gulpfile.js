@@ -55,7 +55,7 @@ function moveStatics () {
 }
 
 function watch () {
-  return gulp.watch(['app/*.html', 'app/js/**/*.js', 'app/css/**/*.css'], browserSync.reload);
+  return gulp.watch(['app/*.html', 'app/js/**/*.js', 'app/css/**/*.css'], gulp.series(browserSync.reload));
 }
 
 // exporting allows access through Gulp-CLI, accessed through package.json since it's locally installed
