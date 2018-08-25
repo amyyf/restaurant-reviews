@@ -39,11 +39,12 @@ Most of the code in this project has been written to the ES6 JavaScript specific
 
 Clone the repo down to your computer and run `npm install` in the project folder to install the project dependencies.
 
-To launch the dev server, run `npm run serve`.
+To build the production site, run `npm run build`. Then cd into the newly created `dist` folder and either start a simple Python server with `python -m SimpleHTTPServer 8000` or use a service like [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en).
 
-To build the production site, run `npm run build`.
+To launch the dev server, run `npm run serve`. BUT:
 
-To build the production site AND start a server for it, run `npm run serve-prod`.
+**Note about the Service Worker**
+The service worker does not work properly on the dev server so testing there will not work for the restaurant details pages. The dev server is launched through BrowserSync via Gulp, and BrowserSync proxies request URLs, so they end up not matching the cache names. The home page of the app works fine offline but the details pages aren't directed properly.
 
 ### Dependencies
 
