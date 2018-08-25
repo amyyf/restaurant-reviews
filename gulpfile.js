@@ -19,6 +19,12 @@ function serveDev (done) {
   done();
 }
 
+function reload (done) {
+  browserSync.reload(['app/*.html', 'app/js/**/*.js', 'app/css/**/*.css']);
+  console.log('reloaded');
+  done();
+}
+
 // generate live server to check production site
 function serveProd (done) {
   browserSync.init({
@@ -55,7 +61,7 @@ function moveStatics () {
 }
 
 function watch () {
-  return gulp.watch(['app/*.html', 'app/js/**/*.js', 'app/css/**/*.css'], browserSync.reload);
+  return gulp.watch(['app/*.html', 'app/js/**/*.js', 'app/css/**/*.css'], gulp.series(reload));
 }
 
 // exporting allows access through Gulp-CLI, accessed through package.json since it's locally installed
