@@ -21,7 +21,6 @@ function serveDev (done) {
 
 function reload (done) {
   browserSync.reload(['app/*.html', 'app/js/**/*.js', 'app/css/**/*.css']);
-  console.log('reloaded');
   done();
 }
 
