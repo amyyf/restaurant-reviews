@@ -6,6 +6,8 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const cssnano = require('gulp-cssnano');
+const imagemin = require('gulp-imagemin');
+const gulpCache = require('gulp-cache');
 
 const distFolder = 'dist'; // define for code resilience
 
@@ -45,6 +47,12 @@ function resetDist () {
   return del([distFolder]);
 }
 
+function images () {
+  return gulp.src('app/img/*')
+    .pipe(gulpCache(imagemin()))
+    .pipe(gulp.dest('dist/img'));
+}
+
 function buildJs () {
   return gulp.src('app/js/*')
     .pipe(babel({
@@ -55,7 +63,7 @@ function buildJs () {
 }
 
 function moveStatics () {
-  return gulp.src(['app/*.html', 'app/data/*', 'app/img/*'], { base: 'app/' }) // 'base' preserves folder structure
+  return gulp.src(['app/*.html', 'app/data/*', 'app/sw.js'], { base: 'app/' }) // 'base' preserves folder structure
     .pipe(gulp.dest(distFolder));
 }
 
@@ -65,5 +73,5 @@ function watch () {
 
 // exporting allows access through Gulp-CLI, accessed through package.json since it's locally installed
 exports.dev = gulp.series(serveDev, watch); // live serve for development
-exports.build = gulp.series(resetDist, gulp.parallel(minifyCss, buildJs, moveStatics)); // build to dist file
+exports.build = gulp.series(resetDist, gulp.parallel(minifyCss, images, buildJs, moveStatics)); // build to dist file
 exports.serveProd = gulp.series(exports.build, serveProd); // test production site
