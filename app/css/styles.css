@@ -319,3 +319,31 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 		margin: 1em auto;
 	}
 }
+@media screen and (min-width: 950px) {
+	#maincontent {
+		display: flex;
+	}
+	#results-container {
+		flex: 1 0 50%;
+	}
+
+	#map-container {
+		flex: 1 0 50%;
+    top: 0;
+    position: sticky;
+    overflow: hidden;
+    height: 100%;
+	}
+
+	#map {
+		height: 75vh;
+	}
+
+	.filter-options {
+		width: 100%;
+	}
+
+	.filter-options h3 {
+		width: 100%;
+	}
+}
