@@ -12,7 +12,7 @@ The [starter code](https://github.com/udacity/mws-restaurant-stage-1) is on Udac
 
 Clone the repo down to your computer and run `npm install` in the project folder to install the project dependencies.
 
-To build the production site, run `npm run build`. Then cd into the newly created `dist` folder and either start a simple Python server with `python -m SimpleHTTPServer 8000` or use a service like [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en).
+To build the production site, run `npm run build`. Then cd into the newly created `dist` folder and either start a simple Python server with `python -m SimpleHTTPServer 8000` or use a service like [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en). In Python earlier than v3 you may need to use port 8069.
 
 To launch the dev server, run `npm run serve`. BUT:
 
