@@ -86,13 +86,13 @@ const initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
-  updateRestaurants();
+  updateRestaurants(self);
 };
 
 /**
  * Update page and map for current restaurants.
  */
-const updateRestaurants = () => {
+const updateRestaurants = (map) => {
   const cSelect = document.getElementById('cuisines-select');
   const nSelect = document.getElementById('neighborhoods-select');
 
@@ -110,6 +110,7 @@ const updateRestaurants = () => {
       fillRestaurantsHTML();
     }
   });
+  // map.resize();
 };
 
 /**
