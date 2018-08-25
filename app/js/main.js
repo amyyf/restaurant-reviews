@@ -197,9 +197,8 @@ const addMarkersToMap = (restaurants = self.restaurants) => {
 if (navigator.serviceWorker) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('sw.js').then(function (registration) {
-      console.log('sw registration successful with scope ', registration);
     }).catch(function (error) {
-      console.log('sw registration failed', error);
+      console.log('sw registration failed with error ', error);
     });
   });
 }

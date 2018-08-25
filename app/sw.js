@@ -1,7 +1,5 @@
 /* global caches fetch */
 
-console.log('sw registered');
-
 const cacheName = 'restaurant-reviews-cache-v1';
 const urlsToCache = [
   '/',
@@ -28,7 +26,6 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(cacheName)
       .then(function (cache) {
-        console.log('cache opened');
         return cache.addAll(urlsToCache);
       }).catch(function (error) {
         console.log(error);
@@ -40,7 +37,6 @@ self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request)
       .then(function (response) {
-        console.log(event.request);
         return response || fetch(event.request);
       }));
 });
