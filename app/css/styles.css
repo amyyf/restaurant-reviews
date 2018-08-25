@@ -320,6 +320,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	}
 }
 @media screen and (min-width: 950px) {
+	header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+	}
+
 	#maincontent {
 		display: flex;
 	}
@@ -329,7 +335,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 	#map-container {
 		flex: 1 0 50%;
-    top: 0;
+    top: 4.5em;
     position: sticky;
     overflow: hidden;
     height: 100%;
@@ -345,5 +351,25 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 	.filter-options h3 {
 		width: 100%;
+	}
+
+	.inside #maincontent {
+		display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+	}
+
+	.inside #map-container {
+		height: 75vh;
+		flex: 0 0 50%
+	}
+
+	.inside #restaurant-container {
+		flex: 1 0;
+	}
+
+	.inside #reviews-container {
+		padding: 0;
+		width: 50%;
 	}
 }
