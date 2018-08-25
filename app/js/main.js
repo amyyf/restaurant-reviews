@@ -189,6 +189,21 @@ const addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 };
+
+/**
+ * Install service worker
+ */
+
+if (navigator.serviceWorker) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function (registration) {
+      console.log('sw registration successful with scope ', registration);
+    }).catch(function (error) {
+      console.log('sw registration failed', error);
+    });
+  });
+}
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
