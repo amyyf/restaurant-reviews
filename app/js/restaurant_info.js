@@ -174,3 +174,16 @@ const getParameterByName = (name, url) => {
   if (!results[2]) { return ''; }
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
+
+/**
+ * Install service worker
+ */
+
+if (navigator.serviceWorker) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function (registration) {
+    }).catch(function (error) {
+      console.log('sw registration failed with error ', error);
+    });
+  });
+}
